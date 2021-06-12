@@ -6,7 +6,7 @@ with open('README.rst') as file:
 
 setup(
     name='braze-sdk',
-    version='1.0.0',
+    version='1.0.1',
     description='Braze Python 3 SDK.',
     packages=find_packages(),
     keywords=(
