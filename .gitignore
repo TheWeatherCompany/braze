@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 deploy.sh
+deploy_to_artifactory.sh

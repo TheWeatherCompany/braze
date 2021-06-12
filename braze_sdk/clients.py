@@ -61,6 +61,20 @@ class UserDataClient(object):
         data = json.dumps({"attributes": attributes})
         return requests.post(url, headers=headers, data=data)
 
+    def add_custom_attributes_json(self, attributes):
+        """Add custom attributes for list of users.
+
+        Args:
+            attributes (list): list of dictionary. Example:
+                [{"external_id": xxx, "video_played_count": 3}....]
+        """
+        url = f"{self.end_point}/users/track"
+        headers = CaseInsensitiveDict()
+        headers["Content-Type"] = "application/json"
+        headers["Authorization"] = f'Bearer {self.api_key}'
+        return requests.post(
+            url, headers=headers, data=json.dumps({"attributes": attributes}))
+
     def delete_custom_attributes(self, df):
         """Delete custom attributes specified as columns in df.
 
